@@ -9,11 +9,38 @@
 /* Begin PBXBuildFile section */
 		52D6EE3D1B51C059006AAB21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE3C1B51C059006AAB21 /* main.m */; };
 		52D6EE401B51C059006AAB21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE3F1B51C059006AAB21 /* AppDelegate.m */; };
-		52D6EE431B51C059006AAB21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE421B51C059006AAB21 /* ViewController.m */; };
-		52D6EE461B51C059006AAB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D6EE441B51C059006AAB21 /* Main.storyboard */; };
 		52D6EE481B51C059006AAB21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D6EE471B51C059006AAB21 /* Images.xcassets */; };
 		52D6EE4B1B51C059006AAB21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D6EE491B51C059006AAB21 /* LaunchScreen.xib */; };
 		52D6EE571B51C05A006AAB21 /* VazoomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE561B51C05A006AAB21 /* VazoomTests.m */; };
+		52D6EE631B51C38E006AAB21 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6EE621B51C38E006AAB21 /* CoreLocation.framework */; };
+		52D6EE641B51C3A2006AAB21 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6EE601B51C381006AAB21 /* MapKit.framework */; };
+		52D6EE691B51C694006AAB21 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE661B51C694006AAB21 /* LocationService.m */; };
+		52D6EE6A1B51C694006AAB21 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE681B51C694006AAB21 /* Constants.m */; };
+		52D6EE711B51C6BD006AAB21 /* VZParking.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE6C1B51C6BD006AAB21 /* VZParking.m */; };
+		52D6EE721B51C6BD006AAB21 /* ParkingAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE6E1B51C6BD006AAB21 /* ParkingAddress.m */; };
+		52D6EE731B51C6BD006AAB21 /* ParkingSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE701B51C6BD006AAB21 /* ParkingSchedule.m */; };
+		52D6EE7A1B51C727006AAB21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D6EE791B51C727006AAB21 /* Main.storyboard */; };
+		52D6EE811B51C73E006AAB21 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE7C1B51C73E006AAB21 /* MainNavigationController.m */; };
+		52D6EE821B51C73E006AAB21 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE7E1B51C73E006AAB21 /* MainViewController.m */; };
+		52D6EE831B51C73E006AAB21 /* CustomTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE801B51C73E006AAB21 /* CustomTransitioning.m */; };
+		52D6EE8D1B51C760006AAB21 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE861B51C760006AAB21 /* MapViewController.m */; };
+		52D6EE8E1B51C760006AAB21 /* VZMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE881B51C760006AAB21 /* VZMapAnnotation.m */; };
+		52D6EE8F1B51C760006AAB21 /* ValetParkingLocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE8A1B51C760006AAB21 /* ValetParkingLocationCell.m */; };
+		52D6EE901B51C760006AAB21 /* LocationSearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE8C1B51C760006AAB21 /* LocationSearchResultTableViewController.m */; };
+		52D6EE941B51C776006AAB21 /* ReservationDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE931B51C776006AAB21 /* ReservationDialogViewController.m */; };
+		52D6EE9C1B51C7A7006AAB21 /* PickMyCarVieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE971B51C7A7006AAB21 /* PickMyCarVieController.m */; };
+		52D6EE9D1B51C7A7006AAB21 /* AddCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE991B51C7A7006AAB21 /* AddCreditCardViewController.m */; };
+		52D6EE9E1B51C7A7006AAB21 /* CounDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE9B1B51C7A7006AAB21 /* CounDownViewController.m */; };
+		52D6EEA41B51C7C0006AAB21 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEA11B51C7C0006AAB21 /* MenuViewController.m */; };
+		52D6EEA51B51C7C0006AAB21 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEA31B51C7C0006AAB21 /* MenuCell.m */; };
+		52D6EEA91B51C7D2006AAB21 /* ReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEA81B51C7D2006AAB21 /* ReservationViewController.m */; };
+		52D6EEAD1B51C801006AAB21 /* PaymentMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEAC1B51C801006AAB21 /* PaymentMethodViewController.m */; };
+		52D6EEB31B51C816006AAB21 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEB01B51C816006AAB21 /* AccountViewController.m */; };
+		52D6EEB41B51C816006AAB21 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEB21B51C816006AAB21 /* SignUpViewController.m */; };
+		52D6EEB81B51C842006AAB21 /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEB71B51C842006AAB21 /* PromotionViewController.m */; };
+		52D6EEBC1B51C855006AAB21 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEBB1B51C855006AAB21 /* ShareViewController.m */; };
+		52D6EEC01B51C866006AAB21 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEBF1B51C866006AAB21 /* HelpViewController.m */; };
+		CA414E2D635041906E082D6C /* libPods-Vazoom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +59,67 @@
 		52D6EE3C1B51C059006AAB21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52D6EE3E1B51C059006AAB21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52D6EE3F1B51C059006AAB21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		52D6EE411B51C059006AAB21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		52D6EE421B51C059006AAB21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		52D6EE451B51C059006AAB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52D6EE471B51C059006AAB21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52D6EE4A1B51C059006AAB21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		52D6EE501B51C05A006AAB21 /* VazoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VazoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6EE551B51C05A006AAB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D6EE561B51C05A006AAB21 /* VazoomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VazoomTests.m; sourceTree = "<group>"; };
+		52D6EE601B51C381006AAB21 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		52D6EE621B51C38E006AAB21 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		52D6EE651B51C694006AAB21 /* LocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		52D6EE661B51C694006AAB21 /* LocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
+		52D6EE671B51C694006AAB21 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		52D6EE681B51C694006AAB21 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		52D6EE6B1B51C6BD006AAB21 /* VZParking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZParking.h; sourceTree = "<group>"; };
+		52D6EE6C1B51C6BD006AAB21 /* VZParking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZParking.m; sourceTree = "<group>"; };
+		52D6EE6D1B51C6BD006AAB21 /* ParkingAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingAddress.h; sourceTree = "<group>"; };
+		52D6EE6E1B51C6BD006AAB21 /* ParkingAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingAddress.m; sourceTree = "<group>"; };
+		52D6EE6F1B51C6BD006AAB21 /* ParkingSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingSchedule.h; sourceTree = "<group>"; };
+		52D6EE701B51C6BD006AAB21 /* ParkingSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingSchedule.m; sourceTree = "<group>"; };
+		52D6EE791B51C727006AAB21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		52D6EE7B1B51C73E006AAB21 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		52D6EE7C1B51C73E006AAB21 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		52D6EE7D1B51C73E006AAB21 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		52D6EE7E1B51C73E006AAB21 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		52D6EE7F1B51C73E006AAB21 /* CustomTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTransitioning.h; sourceTree = "<group>"; };
+		52D6EE801B51C73E006AAB21 /* CustomTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTransitioning.m; sourceTree = "<group>"; };
+		52D6EE851B51C760006AAB21 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		52D6EE861B51C760006AAB21 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		52D6EE871B51C760006AAB21 /* VZMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZMapAnnotation.h; sourceTree = "<group>"; };
+		52D6EE881B51C760006AAB21 /* VZMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZMapAnnotation.m; sourceTree = "<group>"; };
+		52D6EE891B51C760006AAB21 /* ValetParkingLocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValetParkingLocationCell.h; sourceTree = "<group>"; };
+		52D6EE8A1B51C760006AAB21 /* ValetParkingLocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValetParkingLocationCell.m; sourceTree = "<group>"; };
+		52D6EE8B1B51C760006AAB21 /* LocationSearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSearchResultTableViewController.h; sourceTree = "<group>"; };
+		52D6EE8C1B51C760006AAB21 /* LocationSearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSearchResultTableViewController.m; sourceTree = "<group>"; };
+		52D6EE921B51C776006AAB21 /* ReservationDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationDialogViewController.h; sourceTree = "<group>"; };
+		52D6EE931B51C776006AAB21 /* ReservationDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationDialogViewController.m; sourceTree = "<group>"; };
+		52D6EE961B51C7A7006AAB21 /* PickMyCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickMyCarViewController.h; sourceTree = "<group>"; };
+		52D6EE971B51C7A7006AAB21 /* PickMyCarVieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickMyCarVieController.m; sourceTree = "<group>"; };
+		52D6EE981B51C7A7006AAB21 /* AddCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCreditCardViewController.h; sourceTree = "<group>"; };
+		52D6EE991B51C7A7006AAB21 /* AddCreditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCreditCardViewController.m; sourceTree = "<group>"; };
+		52D6EE9A1B51C7A7006AAB21 /* CounDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounDownViewController.h; sourceTree = "<group>"; };
+		52D6EE9B1B51C7A7006AAB21 /* CounDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounDownViewController.m; sourceTree = "<group>"; };
+		52D6EEA01B51C7C0006AAB21 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		52D6EEA11B51C7C0006AAB21 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		52D6EEA21B51C7C0006AAB21 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		52D6EEA31B51C7C0006AAB21 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		52D6EEA71B51C7D2006AAB21 /* ReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationViewController.h; sourceTree = "<group>"; };
+		52D6EEA81B51C7D2006AAB21 /* ReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationViewController.m; sourceTree = "<group>"; };
+		52D6EEAB1B51C801006AAB21 /* PaymentMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentMethodViewController.h; sourceTree = "<group>"; };
+		52D6EEAC1B51C801006AAB21 /* PaymentMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentMethodViewController.m; sourceTree = "<group>"; };
+		52D6EEAF1B51C816006AAB21 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		52D6EEB01B51C816006AAB21 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		52D6EEB11B51C816006AAB21 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		52D6EEB21B51C816006AAB21 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		52D6EEB61B51C842006AAB21 /* PromotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionViewController.h; sourceTree = "<group>"; };
+		52D6EEB71B51C842006AAB21 /* PromotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionViewController.m; sourceTree = "<group>"; };
+		52D6EEBA1B51C855006AAB21 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		52D6EEBB1B51C855006AAB21 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		52D6EEBE1B51C866006AAB21 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		52D6EEBF1B51C866006AAB21 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vazoom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D35288EC10175132C0FA54D7 /* Pods-Vazoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vazoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom.release.xcconfig"; sourceTree = "<group>"; };
+		E07E8B26B29654B090048FBE /* Pods-Vazoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vazoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +127,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D6EE631B51C38E006AAB21 /* CoreLocation.framework in Frameworks */,
+				52D6EE641B51C3A2006AAB21 /* MapKit.framework in Frameworks */,
+				CA414E2D635041906E082D6C /* libPods-Vazoom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +143,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39172E9E59E5ECF5E0F1AF39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE621B51C38E006AAB21 /* CoreLocation.framework */,
+				52D6EE601B51C381006AAB21 /* MapKit.framework */,
+				CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		412386BC94C29746E3E122FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E07E8B26B29654B090048FBE /* Pods-Vazoom.debug.xcconfig */,
+				D35288EC10175132C0FA54D7 /* Pods-Vazoom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		52D6EE2E1B51C059006AAB21 = {
 			isa = PBXGroup;
 			children = (
 				52D6EE391B51C059006AAB21 /* Vazoom */,
 				52D6EE531B51C05A006AAB21 /* VazoomTests */,
 				52D6EE381B51C059006AAB21 /* Products */,
+				412386BC94C29746E3E122FA /* Pods */,
+				39172E9E59E5ECF5E0F1AF39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +187,10 @@
 			children = (
 				52D6EE3E1B51C059006AAB21 /* AppDelegate.h */,
 				52D6EE3F1B51C059006AAB21 /* AppDelegate.m */,
-				52D6EE411B51C059006AAB21 /* ViewController.h */,
-				52D6EE421B51C059006AAB21 /* ViewController.m */,
-				52D6EE441B51C059006AAB21 /* Main.storyboard */,
+				52D6EE751B51C6D6006AAB21 /* model */,
+				52D6EE761B51C6E6006AAB21 /* service */,
+				52D6EE771B51C6EE006AAB21 /* utils */,
+				52D6EE781B51C706006AAB21 /* view */,
 				52D6EE471B51C059006AAB21 /* Images.xcassets */,
 				52D6EE491B51C059006AAB21 /* LaunchScreen.xib */,
 				52D6EE3A1B51C059006AAB21 /* Supporting Files */,
@@ -119,6 +224,173 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		52D6EE751B51C6D6006AAB21 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE6B1B51C6BD006AAB21 /* VZParking.h */,
+				52D6EE6C1B51C6BD006AAB21 /* VZParking.m */,
+				52D6EE6D1B51C6BD006AAB21 /* ParkingAddress.h */,
+				52D6EE6E1B51C6BD006AAB21 /* ParkingAddress.m */,
+				52D6EE6F1B51C6BD006AAB21 /* ParkingSchedule.h */,
+				52D6EE701B51C6BD006AAB21 /* ParkingSchedule.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		52D6EE761B51C6E6006AAB21 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE651B51C694006AAB21 /* LocationService.h */,
+				52D6EE661B51C694006AAB21 /* LocationService.m */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
+		52D6EE771B51C6EE006AAB21 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE671B51C694006AAB21 /* Constants.h */,
+				52D6EE681B51C694006AAB21 /* Constants.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		52D6EE781B51C706006AAB21 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE791B51C727006AAB21 /* Main.storyboard */,
+				52D6EE841B51C748006AAB21 /* main */,
+				52D6EE911B51C767006AAB21 /* map */,
+				52D6EE951B51C77C006AAB21 /* reservation dialog */,
+				52D6EE9F1B51C7AE006AAB21 /* pick my car */,
+				52D6EEA61B51C7C5006AAB21 /* menu */,
+				52D6EEAA1B51C7D6006AAB21 /* reservation */,
+				52D6EEAE1B51C806006AAB21 /* payment */,
+				52D6EEB51B51C81B006AAB21 /* account */,
+				52D6EEB91B51C846006AAB21 /* promotion */,
+				52D6EEBD1B51C85A006AAB21 /* share */,
+				52D6EEC11B51C86A006AAB21 /* help */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		52D6EE841B51C748006AAB21 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE7B1B51C73E006AAB21 /* MainNavigationController.h */,
+				52D6EE7C1B51C73E006AAB21 /* MainNavigationController.m */,
+				52D6EE7D1B51C73E006AAB21 /* MainViewController.h */,
+				52D6EE7E1B51C73E006AAB21 /* MainViewController.m */,
+				52D6EE7F1B51C73E006AAB21 /* CustomTransitioning.h */,
+				52D6EE801B51C73E006AAB21 /* CustomTransitioning.m */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		52D6EE911B51C767006AAB21 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE851B51C760006AAB21 /* MapViewController.h */,
+				52D6EE861B51C760006AAB21 /* MapViewController.m */,
+				52D6EE871B51C760006AAB21 /* VZMapAnnotation.h */,
+				52D6EE881B51C760006AAB21 /* VZMapAnnotation.m */,
+				52D6EE891B51C760006AAB21 /* ValetParkingLocationCell.h */,
+				52D6EE8A1B51C760006AAB21 /* ValetParkingLocationCell.m */,
+				52D6EE8B1B51C760006AAB21 /* LocationSearchResultTableViewController.h */,
+				52D6EE8C1B51C760006AAB21 /* LocationSearchResultTableViewController.m */,
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
+		52D6EE951B51C77C006AAB21 /* reservation dialog */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE921B51C776006AAB21 /* ReservationDialogViewController.h */,
+				52D6EE931B51C776006AAB21 /* ReservationDialogViewController.m */,
+			);
+			name = "reservation dialog";
+			sourceTree = "<group>";
+		};
+		52D6EE9F1B51C7AE006AAB21 /* pick my car */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EE961B51C7A7006AAB21 /* PickMyCarViewController.h */,
+				52D6EE971B51C7A7006AAB21 /* PickMyCarVieController.m */,
+				52D6EE981B51C7A7006AAB21 /* AddCreditCardViewController.h */,
+				52D6EE991B51C7A7006AAB21 /* AddCreditCardViewController.m */,
+				52D6EE9A1B51C7A7006AAB21 /* CounDownViewController.h */,
+				52D6EE9B1B51C7A7006AAB21 /* CounDownViewController.m */,
+			);
+			name = "pick my car";
+			sourceTree = "<group>";
+		};
+		52D6EEA61B51C7C5006AAB21 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEA01B51C7C0006AAB21 /* MenuViewController.h */,
+				52D6EEA11B51C7C0006AAB21 /* MenuViewController.m */,
+				52D6EEA21B51C7C0006AAB21 /* MenuCell.h */,
+				52D6EEA31B51C7C0006AAB21 /* MenuCell.m */,
+			);
+			name = menu;
+			sourceTree = "<group>";
+		};
+		52D6EEAA1B51C7D6006AAB21 /* reservation */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEA71B51C7D2006AAB21 /* ReservationViewController.h */,
+				52D6EEA81B51C7D2006AAB21 /* ReservationViewController.m */,
+			);
+			name = reservation;
+			sourceTree = "<group>";
+		};
+		52D6EEAE1B51C806006AAB21 /* payment */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEAB1B51C801006AAB21 /* PaymentMethodViewController.h */,
+				52D6EEAC1B51C801006AAB21 /* PaymentMethodViewController.m */,
+			);
+			name = payment;
+			sourceTree = "<group>";
+		};
+		52D6EEB51B51C81B006AAB21 /* account */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEAF1B51C816006AAB21 /* AccountViewController.h */,
+				52D6EEB01B51C816006AAB21 /* AccountViewController.m */,
+				52D6EEB11B51C816006AAB21 /* SignUpViewController.h */,
+				52D6EEB21B51C816006AAB21 /* SignUpViewController.m */,
+			);
+			name = account;
+			sourceTree = "<group>";
+		};
+		52D6EEB91B51C846006AAB21 /* promotion */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEB61B51C842006AAB21 /* PromotionViewController.h */,
+				52D6EEB71B51C842006AAB21 /* PromotionViewController.m */,
+			);
+			name = promotion;
+			sourceTree = "<group>";
+		};
+		52D6EEBD1B51C85A006AAB21 /* share */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEBA1B51C855006AAB21 /* ShareViewController.h */,
+				52D6EEBB1B51C855006AAB21 /* ShareViewController.m */,
+			);
+			name = share;
+			sourceTree = "<group>";
+		};
+		52D6EEC11B51C86A006AAB21 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				52D6EEBE1B51C866006AAB21 /* HelpViewController.h */,
+				52D6EEBF1B51C866006AAB21 /* HelpViewController.m */,
+			);
+			name = help;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +398,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6EE5A1B51C05A006AAB21 /* Build configuration list for PBXNativeTarget "Vazoom" */;
 			buildPhases = (
+				7BBBF883C59C5AC39E62ED1D /* Check Pods Manifest.lock */,
 				52D6EE331B51C059006AAB21 /* Sources */,
 				52D6EE341B51C059006AAB21 /* Frameworks */,
 				52D6EE351B51C059006AAB21 /* Resources */,
+				06B887EC7CBBADA419C112AA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +442,11 @@
 				TargetAttributes = {
 					52D6EE361B51C059006AAB21 = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					52D6EE4F1B51C05A006AAB21 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -199,7 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6EE461B51C059006AAB21 /* Main.storyboard in Resources */,
+				52D6EE7A1B51C727006AAB21 /* Main.storyboard in Resources */,
 				52D6EE4B1B51C059006AAB21 /* LaunchScreen.xib in Resources */,
 				52D6EE481B51C059006AAB21 /* Images.xcassets in Resources */,
 			);
@@ -214,14 +493,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06B887EC7CBBADA419C112AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BBBF883C59C5AC39E62ED1D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52D6EE331B51C059006AAB21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6EE431B51C059006AAB21 /* ViewController.m in Sources */,
+				52D6EE831B51C73E006AAB21 /* CustomTransitioning.m in Sources */,
+				52D6EE711B51C6BD006AAB21 /* VZParking.m in Sources */,
+				52D6EE731B51C6BD006AAB21 /* ParkingSchedule.m in Sources */,
+				52D6EEB31B51C816006AAB21 /* AccountViewController.m in Sources */,
+				52D6EE721B51C6BD006AAB21 /* ParkingAddress.m in Sources */,
+				52D6EEAD1B51C801006AAB21 /* PaymentMethodViewController.m in Sources */,
+				52D6EEB81B51C842006AAB21 /* PromotionViewController.m in Sources */,
+				52D6EEA41B51C7C0006AAB21 /* MenuViewController.m in Sources */,
 				52D6EE401B51C059006AAB21 /* AppDelegate.m in Sources */,
+				52D6EE9E1B51C7A7006AAB21 /* CounDownViewController.m in Sources */,
+				52D6EEBC1B51C855006AAB21 /* ShareViewController.m in Sources */,
+				52D6EE821B51C73E006AAB21 /* MainViewController.m in Sources */,
+				52D6EE9D1B51C7A7006AAB21 /* AddCreditCardViewController.m in Sources */,
+				52D6EE691B51C694006AAB21 /* LocationService.m in Sources */,
+				52D6EEA91B51C7D2006AAB21 /* ReservationViewController.m in Sources */,
 				52D6EE3D1B51C059006AAB21 /* main.m in Sources */,
+				52D6EEC01B51C866006AAB21 /* HelpViewController.m in Sources */,
+				52D6EEB41B51C816006AAB21 /* SignUpViewController.m in Sources */,
+				52D6EE941B51C776006AAB21 /* ReservationDialogViewController.m in Sources */,
+				52D6EE811B51C73E006AAB21 /* MainNavigationController.m in Sources */,
+				52D6EE8E1B51C760006AAB21 /* VZMapAnnotation.m in Sources */,
+				52D6EEA51B51C7C0006AAB21 /* MenuCell.m in Sources */,
+				52D6EE8F1B51C760006AAB21 /* ValetParkingLocationCell.m in Sources */,
+				52D6EE901B51C760006AAB21 /* LocationSearchResultTableViewController.m in Sources */,
+				52D6EE6A1B51C694006AAB21 /* Constants.m in Sources */,
+				52D6EE9C1B51C7A7006AAB21 /* PickMyCarVieController.m in Sources */,
+				52D6EE8D1B51C760006AAB21 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +580,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		52D6EE441B51C059006AAB21 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52D6EE451B51C059006AAB21 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		52D6EE491B51C059006AAB21 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +673,7 @@
 		};
 		52D6EE5B1B51C05A006AAB21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07E8B26B29654B090048FBE /* Pods-Vazoom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Vazoom/Info.plist;
@@ -355,6 +684,7 @@
 		};
 		52D6EE5C1B51C05A006AAB21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D35288EC10175132C0FA54D7 /* Pods-Vazoom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Vazoom/Info.plist;
@@ -416,6 +746,7 @@
 				52D6EE5C1B51C05A006AAB21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52D6EE5D1B51C05A006AAB21 /* Build configuration list for PBXNativeTarget "VazoomTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +755,7 @@
 				52D6EE5F1B51C05A006AAB21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
