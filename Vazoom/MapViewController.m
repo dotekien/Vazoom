@@ -318,9 +318,6 @@
         
         LocationSearchResultTableViewController *vc = (LocationSearchResultTableViewController *)self.searchController.searchResultsController;
         
-        // Present SearchResultsTableViewController as the topViewController
-        //LocationSearchResultTableViewController *vc = (LocationSearchResultTableViewController *)navController.topViewController;
-        
         // Update searchResults
         vc.searchResults = self.locationSearchResults;
         vc.callViewController = self;
