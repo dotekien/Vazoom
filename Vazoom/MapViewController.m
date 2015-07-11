@@ -369,9 +369,6 @@
     self.navigationItem.hidesBackButton = YES;
     self.searchController.searchBar.showsCancelButton = YES;
     LocationSearchResultTableViewController *vc = (LocationSearchResultTableViewController *)self.searchController.searchResultsController;
-    
-    // Present SearchResultsTableViewController as the topViewController
-    //LocationSearchResultTableViewController *vc = (LocationSearchResultTableViewController *)navController.topViewController;
     vc.tableView.hidden = NO;
 }
 
