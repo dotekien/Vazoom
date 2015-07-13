@@ -7,9 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ParseUI/ParseUI.h>
-#import <Bolts/Bolts.h>
-#import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UISearchResultsUpdating,UISearchControllerDelegate, UISearchBarDelegate, MKMapViewDelegate>

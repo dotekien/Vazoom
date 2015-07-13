@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52C6D0AC1B53371A00F69406 /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C6D0AB1B53371A00F69406 /* AccountService.m */; };
+		52C6D0AF1B533E8F00F69406 /* UIViewController+Vazoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C6D0AE1B533E8F00F69406 /* UIViewController+Vazoom.m */; };
 		52D6EE3D1B51C059006AAB21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE3C1B51C059006AAB21 /* main.m */; };
 		52D6EE401B51C059006AAB21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE3F1B51C059006AAB21 /* AppDelegate.m */; };
 		52D6EE481B51C059006AAB21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D6EE471B51C059006AAB21 /* Images.xcassets */; };
@@ -40,6 +42,7 @@
 		52D6EEB81B51C842006AAB21 /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEB71B51C842006AAB21 /* PromotionViewController.m */; };
 		52D6EEBC1B51C855006AAB21 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEBB1B51C855006AAB21 /* ShareViewController.m */; };
 		52D6EEC01B51C866006AAB21 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEBF1B51C866006AAB21 /* HelpViewController.m */; };
+		52F12BE91B52C37000BB40B7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12BE81B52C37000BB40B7 /* LoginViewController.m */; };
 		CA414E2D635041906E082D6C /* libPods-Vazoom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52C6D0AA1B53371A00F69406 /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountService.h; sourceTree = "<group>"; };
+		52C6D0AB1B53371A00F69406 /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountService.m; sourceTree = "<group>"; };
+		52C6D0AD1B533E8F00F69406 /* UIViewController+Vazoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Vazoom.h"; sourceTree = "<group>"; };
+		52C6D0AE1B533E8F00F69406 /* UIViewController+Vazoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Vazoom.m"; sourceTree = "<group>"; };
 		52D6EE371B51C059006AAB21 /* Vazoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vazoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6EE3B1B51C059006AAB21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52D6EE3C1B51C059006AAB21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,6 +124,8 @@
 		52D6EEBB1B51C855006AAB21 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		52D6EEBE1B51C866006AAB21 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		52D6EEBF1B51C866006AAB21 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		52F12BE71B52C37000BB40B7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		52F12BE81B52C37000BB40B7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vazoom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35288EC10175132C0FA54D7 /* Pods-Vazoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vazoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom.release.xcconfig"; sourceTree = "<group>"; };
 		E07E8B26B29654B090048FBE /* Pods-Vazoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vazoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +251,8 @@
 			children = (
 				52D6EE651B51C694006AAB21 /* LocationService.h */,
 				52D6EE661B51C694006AAB21 /* LocationService.m */,
+				52C6D0AA1B53371A00F69406 /* AccountService.h */,
+				52C6D0AB1B53371A00F69406 /* AccountService.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -251,6 +262,8 @@
 			children = (
 				52D6EE671B51C694006AAB21 /* Constants.h */,
 				52D6EE681B51C694006AAB21 /* Constants.m */,
+				52C6D0AD1B533E8F00F69406 /* UIViewController+Vazoom.h */,
+				52C6D0AE1B533E8F00F69406 /* UIViewController+Vazoom.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -358,6 +371,8 @@
 			children = (
 				52D6EEAF1B51C816006AAB21 /* AccountViewController.h */,
 				52D6EEB01B51C816006AAB21 /* AccountViewController.m */,
+				52F12BE71B52C37000BB40B7 /* LoginViewController.h */,
+				52F12BE81B52C37000BB40B7 /* LoginViewController.m */,
 				52D6EEB11B51C816006AAB21 /* SignUpViewController.h */,
 				52D6EEB21B51C816006AAB21 /* SignUpViewController.m */,
 			);
@@ -535,6 +550,7 @@
 				52D6EE711B51C6BD006AAB21 /* VZParking.m in Sources */,
 				52D6EE731B51C6BD006AAB21 /* ParkingSchedule.m in Sources */,
 				52D6EEB31B51C816006AAB21 /* AccountViewController.m in Sources */,
+				52F12BE91B52C37000BB40B7 /* LoginViewController.m in Sources */,
 				52D6EE721B51C6BD006AAB21 /* ParkingAddress.m in Sources */,
 				52D6EEAD1B51C801006AAB21 /* PaymentMethodViewController.m in Sources */,
 				52D6EEB81B51C842006AAB21 /* PromotionViewController.m in Sources */,
@@ -544,10 +560,12 @@
 				52D6EEBC1B51C855006AAB21 /* ShareViewController.m in Sources */,
 				52D6EE821B51C73E006AAB21 /* MainViewController.m in Sources */,
 				52D6EE9D1B51C7A7006AAB21 /* AddCreditCardViewController.m in Sources */,
+				52C6D0AF1B533E8F00F69406 /* UIViewController+Vazoom.m in Sources */,
 				52D6EE691B51C694006AAB21 /* LocationService.m in Sources */,
 				52D6EEA91B51C7D2006AAB21 /* ReservationViewController.m in Sources */,
 				52D6EE3D1B51C059006AAB21 /* main.m in Sources */,
 				52D6EEC01B51C866006AAB21 /* HelpViewController.m in Sources */,
+				52C6D0AC1B53371A00F69406 /* AccountService.m in Sources */,
 				52D6EEB41B51C816006AAB21 /* SignUpViewController.m in Sources */,
 				52D6EE941B51C776006AAB21 /* ReservationDialogViewController.m in Sources */,
 				52D6EE811B51C73E006AAB21 /* MainNavigationController.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpViewController : UIViewController
-
+@interface SignUpViewController : UIViewController<UITextFieldDelegate>
+@property (strong, nonatomic)NSString *userName;
+@property (strong, nonatomic)NSString *passwordText;
+@property BOOL isSuccessfulRegistration;
 @end

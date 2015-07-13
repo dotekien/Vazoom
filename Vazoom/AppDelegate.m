@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LocationService.h"
 #import <Parse/Parse.h>
+#import "AccountService.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [LocationService service];
+    [AccountService service];
     [Parse setApplicationId:@"5piB1bAS5aeuT6X9tOJmKx9XkaXYS4xk8fJs6KYV" clientKey:@"kAg7RN15pgtBgjtcF4o0wzgL0vVCWFjTyP4tYR4y"];
     return YES;
 }

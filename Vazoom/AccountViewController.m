@@ -9,23 +9,25 @@
 #import "AccountViewController.h"
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "PFUser.h"
 
 @interface AccountViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-
-@property (weak, nonatomic) IBOutlet UIButton *signInBtn;
-@property (weak, nonatomic) IBOutlet UIButton *signUpBtn;
-@property (weak, nonatomic) IBOutlet UIButton *signinFB;
 @end
 
 @implementation AccountViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.signInBtn.layer.cornerRadius = 10;
-    self.signinFB.layer.cornerRadius = 10;
-    self.signUpBtn.layer.cornerRadius = 10;
+    if (![PFUser currentUser]) {
+        [self performSegueWithIdentifier:@"openLoginView" sender:self];
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,9 +37,7 @@
 - (IBAction)openMenuView:(id)sender {
     [(MainViewController *)self.navigationController.viewControllers[0] openMenuView: self];
 }
-- (IBAction)openSigUpView:(id)sender {
-    [self performSegueWithIdentifier:@"openSignUpView" sender:self];
-}
+
 /*
 #pragma mark - Navigation
 
