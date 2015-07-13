@@ -54,7 +54,17 @@
 }
 
 - (IBAction)signInAction:(id)sender {
-
+    if (self.email.text.length > 0 &&
+        self.password.text.length > 0) {
+        [[AccountService service] loginWithUserName: self.email.text password: self.password.text completionBlock:^(NSError *error) {
+            if (error) {
+                [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
+            } else {
+                NSLog(@"Sign in successfully");
+                [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
+            }
+        }];
+    }
 }
 
 - (IBAction)forgotPasswordAction:(id)sender {
