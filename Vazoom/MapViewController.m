@@ -214,6 +214,7 @@
     [self showCurrentView];
     [self toggleBtnListViewAndMapView];
     if (self.openReservationAfterSuccessLoggin) {
+        self.openReservationAfterSuccessLoggin = NO;
         [self performSegueWithIdentifier:@"openReservationDialog" sender:self];
     }
 }
@@ -614,11 +615,7 @@ float MilesToMeters(float miles) {
         [signInAsGuest setTitle:@"Reserve as Guest" forState:UIControlStateNormal];
         signInAsGuest.hidden = NO;
         
-        @weakify(self)
-        loginViewController.successAction = ^{
-            @strongify(self)
-            [self performSegueWithIdentifier:@"openReservationDialog" sender:self];
-        };
+        loginViewController.isSignInFromMapView = YES;
     }
 }
 

@@ -22,12 +22,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *signUpBtn;
 @property (weak, nonatomic) IBOutlet UIButton *signInFB;
 @property (weak, nonatomic) IBOutlet UIButton *signInAsGuest;
+
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.signInBtn.layer.cornerRadius = 10;
     self.signInFB.layer.cornerRadius = 10;
     self.signUpBtn.layer.cornerRadius = 10;
@@ -61,7 +63,11 @@
                 [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
             } else {
                 NSLog(@"Sign in successfully");
-                [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
+                if (self.isSignInFromMapView) {
+                    [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
+                } else if (self.isSignInFromAccountView) {
+                    [self performSegueWithIdentifier:@"unwindFromLoginToAccount" sender:self];
+                }
             }
         }];
     }
@@ -83,7 +89,12 @@
                 [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
             } else {
                 NSLog(@"Sign in successfully");
-                [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
+                if (self.isSignInFromMapView) {
+                    [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
+                } else if (self.isSignInFromAccountView) {
+                    [self performSegueWithIdentifier:@"unwindFromLoginToAccount" sender:self];
+                }
+                
             }
         }];
     }

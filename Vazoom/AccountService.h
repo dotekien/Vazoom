@@ -13,7 +13,6 @@ typedef void(^CompletionBlock)(NSError *error);
 
 @interface AccountService : NSObject
 +(AccountService*)service;
-@property (strong, nonatomic, readonly) PFUser *account;
 
 -(void)loginWithUserName:(NSString *)userName password:(NSString *)password completionBlock:(CompletionBlock)compBlock;
 @end

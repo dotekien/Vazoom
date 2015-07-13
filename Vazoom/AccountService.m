@@ -29,7 +29,7 @@
     [PFUser logInWithUsernameInBackground:userName password:password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
-                                            self.account = user;
+                                            //self.account = user;
                                         } else {
                                             
                                         }

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^successActionBlock)(void);
 
 @interface LoginViewController : UIViewController
-@property (nonatomic, strong) successActionBlock successAction;
-
+@property BOOL isSignInFromMapView;
+@property BOOL isSignInFromAccountView;
 @end
