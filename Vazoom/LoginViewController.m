@@ -74,6 +74,7 @@
 }
 
 - (IBAction)forgotPasswordAction:(id)sender {
+    // ask email address
 }
 
 - (IBAction)signInWithFaceBookAction:(id)sender {

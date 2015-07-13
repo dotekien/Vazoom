@@ -70,7 +70,13 @@
 }
 - (IBAction)resetPassword:(id)sender {
     PFUser *user = [PFUser currentUser];
-    [PFUser requestPasswordResetForEmailInBackground:user[@"email"]];
+    [PFUser requestPasswordResetForEmailInBackground:user[@"email"] block:^(BOOL succeeded, NSError *error){
+        if (succeeded) {
+            [UIViewController showUIAlertActionTitle:@"Reset Succeed!" message:@"Please check your email to reset your password." from:self];
+        } else {
+            [UIViewController showUIAlertActionTitle:@"Reset Failed!" message:[error userInfo][@"error"] from:self];
+        }
+    }];
 }
 
 - (IBAction)signOut:(id)sender {
