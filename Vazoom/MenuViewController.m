@@ -27,10 +27,11 @@
     [super viewDidLoad];
      
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    self.menuItems = @[kMenuItem_find_parking, kMenuItem_reservations, kMenuItem_pick_my_car, kMenuItem_payment_methods, kMenuItem_account, kMenuItem_promotions, kMenuItem_share, kMenuItem_help];
+    self.menuItems = @[kMenuItem_find_parking, kMenuItem_reservations, kMenuItem_pick_my_car, kMenuItem_vehicles, kMenuItem_payment_methods, kMenuItem_account, kMenuItem_promotions, kMenuItem_share, kMenuItem_help];
     self.menuItemIcon = @{kMenuItem_find_parking: @"findParking",
                           kMenuItem_reservations: @"reservations",
                           kMenuItem_pick_my_car: @"pickMyCar",
+                          kMenuItem_vehicles: @"vehicles",
                           kMenuItem_payment_methods: @"paymentMethods",
                           kMenuItem_account: @"account",
                           kMenuItem_promotions: @"promotions",
@@ -40,6 +41,7 @@
     self.menuItemSegueIdentifer = @{kMenuItem_find_parking: kSegueID_openMapView,
                                     kMenuItem_reservations: kSegueID_openReservationView,
                                     kMenuItem_pick_my_car: kSegueID_openPickMyCarView,
+                                    kMenuItem_vehicles: kSegueID_openVehiclesView,
                                     kMenuItem_payment_methods: kSegueID_openPaymentMethodView,
                                     kMenuItem_account: kSegueID_openAccountView,
                                     kMenuItem_promotions: kSegueID_openPromotionView,
@@ -111,6 +113,8 @@
         [mainViewController openShareView: self];
     } else if ([self.menuItemSegueIdentifer[item] isEqualToString:kSegueID_openHelpView]) {
         [mainViewController openHelpView: self];
+    } else if ([self.menuItemSegueIdentifer[item] isEqualToString:kSegueID_openVehiclesView]) {
+        [mainViewController openVehicleView: self];
     }
 }
 

@@ -24,6 +24,11 @@
     return accountService;
 }
 
+-(void)initService
+{
+    self.vehicles = [NSMutableArray new];
+}
+
 -(void)loginWithUserName:(NSString *)userName password:(NSString *)password completionBlock:(CompletionBlock)compBlock
 {
     [PFUser logInWithUsernameInBackground:userName password:password

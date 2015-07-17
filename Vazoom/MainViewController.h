@@ -18,4 +18,5 @@
 -(void)openPromotionView:(id)sender;
 -(void)openShareView:(id)sender;
 -(void)openHelpView:(id)sender;
+-(void)openVehicleView:(id)sender;
 @end

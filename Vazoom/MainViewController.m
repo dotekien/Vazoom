@@ -17,6 +17,8 @@
 #import "ShareViewController.h"
 #import "HelpViewController.h"
 #import "Constants.h"
+#import "VehicleViewController.h"
+
 @interface MainViewController ()
 @property (strong, nonatomic) MapViewController *mapViewController;
 @end
@@ -86,6 +88,13 @@
     [self.navigationController popToViewController:self animated:YES];
     [self performSegueWithIdentifier:kSegueID_openHelpView sender:sender];
 }
+
+-(void)openVehicleView:(id)sender
+{
+    [self.navigationController popToViewController:self animated:YES];
+    [self performSegueWithIdentifier:kSegueID_openVehiclesView sender:sender];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     
@@ -112,6 +121,8 @@
         } else if ([sender isKindOfClass:[HelpViewController class]])
         {
             menuViewController.senderSegueIdentifier = kSegueID_openHelpView;
+        } else if ([sender isKindOfClass:[VehicleViewController class]]) {
+            menuViewController.senderSegueIdentifier = kSegueID_openVehiclesView;
         }
         
     }

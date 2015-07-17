@@ -12,7 +12,10 @@
 typedef void(^CompletionBlock)(NSError *error);
 
 @interface AccountService : NSObject
+@property (strong, nonatomic) NSMutableArray * vehicles;
+
 +(AccountService*)service;
 
 -(void)loginWithUserName:(NSString *)userName password:(NSString *)password completionBlock:(CompletionBlock)compBlock;
+-(void)initService;
 @end

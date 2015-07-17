@@ -43,6 +43,10 @@
 		52D6EEBC1B51C855006AAB21 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEBB1B51C855006AAB21 /* ShareViewController.m */; };
 		52D6EEC01B51C866006AAB21 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EEBF1B51C866006AAB21 /* HelpViewController.m */; };
 		52F12BE91B52C37000BB40B7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12BE81B52C37000BB40B7 /* LoginViewController.m */; };
+		52F23AF21B57E9BC00298020 /* VehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F23AF11B57E9BC00298020 /* VehicleTableViewCell.m */; };
+		52F23AF51B57EDCB00298020 /* AddVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F23AF41B57EDCB00298020 /* AddVehicleViewController.m */; };
+		52F9BA681B54AEC00055E29C /* VehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F9BA671B54AEC00055E29C /* VehicleViewController.m */; };
+		52F9BA6D1B55F31C0055E29C /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F9BA6C1B55F31C0055E29C /* Vehicle.m */; };
 		CA414E2D635041906E082D6C /* libPods-Vazoom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +130,14 @@
 		52D6EEBF1B51C866006AAB21 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		52F12BE71B52C37000BB40B7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		52F12BE81B52C37000BB40B7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		52F23AF01B57E9BC00298020 /* VehicleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleTableViewCell.h; sourceTree = "<group>"; };
+		52F23AF11B57E9BC00298020 /* VehicleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleTableViewCell.m; sourceTree = "<group>"; };
+		52F23AF31B57EDCB00298020 /* AddVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVehicleViewController.h; sourceTree = "<group>"; };
+		52F23AF41B57EDCB00298020 /* AddVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVehicleViewController.m; sourceTree = "<group>"; };
+		52F9BA661B54AEC00055E29C /* VehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleViewController.h; sourceTree = "<group>"; };
+		52F9BA671B54AEC00055E29C /* VehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleViewController.m; sourceTree = "<group>"; };
+		52F9BA6B1B55F31C0055E29C /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		52F9BA6C1B55F31C0055E29C /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		CE7FD0F6231A03999CE7EB71 /* libPods-Vazoom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vazoom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35288EC10175132C0FA54D7 /* Pods-Vazoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vazoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom.release.xcconfig"; sourceTree = "<group>"; };
 		E07E8B26B29654B090048FBE /* Pods-Vazoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vazoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vazoom/Pods-Vazoom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +254,8 @@
 				52D6EE6E1B51C6BD006AAB21 /* ParkingAddress.m */,
 				52D6EE6F1B51C6BD006AAB21 /* ParkingSchedule.h */,
 				52D6EE701B51C6BD006AAB21 /* ParkingSchedule.m */,
+				52F9BA6B1B55F31C0055E29C /* Vehicle.h */,
+				52F9BA6C1B55F31C0055E29C /* Vehicle.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 				52D6EE911B51C767006AAB21 /* map */,
 				52D6EE951B51C77C006AAB21 /* reservation dialog */,
 				52D6EE9F1B51C7AE006AAB21 /* pick my car */,
+				52F9BA6A1B54AED10055E29C /* vehicle */,
 				52D6EEA61B51C7C5006AAB21 /* menu */,
 				52D6EEAA1B51C7D6006AAB21 /* reservation */,
 				52D6EEAE1B51C806006AAB21 /* payment */,
@@ -404,6 +419,19 @@
 				52D6EEBF1B51C866006AAB21 /* HelpViewController.m */,
 			);
 			name = help;
+			sourceTree = "<group>";
+		};
+		52F9BA6A1B54AED10055E29C /* vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				52F9BA661B54AEC00055E29C /* VehicleViewController.h */,
+				52F9BA671B54AEC00055E29C /* VehicleViewController.m */,
+				52F23AF01B57E9BC00298020 /* VehicleTableViewCell.h */,
+				52F23AF11B57E9BC00298020 /* VehicleTableViewCell.m */,
+				52F23AF31B57EDCB00298020 /* AddVehicleViewController.h */,
+				52F23AF41B57EDCB00298020 /* AddVehicleViewController.m */,
+			);
+			name = vehicle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +581,7 @@
 				52F12BE91B52C37000BB40B7 /* LoginViewController.m in Sources */,
 				52D6EE721B51C6BD006AAB21 /* ParkingAddress.m in Sources */,
 				52D6EEAD1B51C801006AAB21 /* PaymentMethodViewController.m in Sources */,
+				52F9BA681B54AEC00055E29C /* VehicleViewController.m in Sources */,
 				52D6EEB81B51C842006AAB21 /* PromotionViewController.m in Sources */,
 				52D6EEA41B51C7C0006AAB21 /* MenuViewController.m in Sources */,
 				52D6EE401B51C059006AAB21 /* AppDelegate.m in Sources */,
@@ -569,9 +598,12 @@
 				52D6EEB41B51C816006AAB21 /* SignUpViewController.m in Sources */,
 				52D6EE941B51C776006AAB21 /* ReservationDialogViewController.m in Sources */,
 				52D6EE811B51C73E006AAB21 /* MainNavigationController.m in Sources */,
+				52F9BA6D1B55F31C0055E29C /* Vehicle.m in Sources */,
 				52D6EE8E1B51C760006AAB21 /* VZMapAnnotation.m in Sources */,
+				52F23AF21B57E9BC00298020 /* VehicleTableViewCell.m in Sources */,
 				52D6EEA51B51C7C0006AAB21 /* MenuCell.m in Sources */,
 				52D6EE8F1B51C760006AAB21 /* ValetParkingLocationCell.m in Sources */,
+				52F23AF51B57EDCB00298020 /* AddVehicleViewController.m in Sources */,
 				52D6EE901B51C760006AAB21 /* LocationSearchResultTableViewController.m in Sources */,
 				52D6EE6A1B51C694006AAB21 /* Constants.m in Sources */,
 				52D6EE9C1B51C7A7006AAB21 /* PickMyCarVieController.m in Sources */,
