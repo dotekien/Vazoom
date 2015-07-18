@@ -9,33 +9,81 @@
 #import "ReservationDialogViewController.h"
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AccountService.h"
+#import <Parse/PFUser.h>
+#import "LoginViewController.h"
+#import "AddVehicleViewController.h"
+#import "Vehicle.h"
+#import <Parse/PFCloud.h>
+#import "VZParking.h"
+#import "Reservation.h"
 
 @interface ReservationDialogViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *parkMyCarBtn;
 @property (weak, nonatomic) IBOutlet UIPickerView *carPicker;
-
-@property (strong, nonatomic) NSMutableArray *carPickerData;
-@property (strong, nonatomic) NSString *selectedCar;
-
+@property (strong, nonatomic) Vehicle *selectedCar;
+@property (strong, nonatomic) VZParking *parking;
 @end
 
 @implementation ReservationDialogViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _carPickerData = [[NSMutableArray alloc] initWithObjects:@"BMW-MD1234",@"Lexus-VA4567",nil];
-
-    [self.carPicker selectRow:0 inComponent:0 animated:NO];
-    self.selectedCar = self.carPickerData[0];
-    
     self.parkMyCarBtn.layer.cornerRadius = 10;
+    if (![[AccountService service] isRegisteredVehicleListEmpty]) {
+        [self.carPicker selectRow:0 inComponent:0 animated:NO];
+        self.selectedCar = self.carPickerData[0];
+    }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![PFUser currentUser]) {
+        [self performSegueWithIdentifier:@"openLoginViewFromReservationView" sender:self];
+    } else {
+        if ([[AccountService service] isRegisteredVehicleListEmpty]) {
+            [self performSegueWithIdentifier:@"openAddVehicleViewFromReservationView" sender:self];
+        } else {
+            [self.carPicker selectRow:0 inComponent:0 animated:NO];
+            self.selectedCar = self.carPickerData[0];
+        }
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(NSArray *)carPickerData
+{
+    return [AccountService service].vehicles;
+}
+
+-(void)setSelectedParking:(VZParking *)parking {
+    self.parking = parking;
+}
+
 - (IBAction)parkMyCar:(id)sender {
+    //submit the reservation with paramas{user, car, parking, time(option)}
+    NSLog(@"userId: %@ - carId: %@ - parkingId: %@", [PFUser currentUser].objectId, self.selectedCar.vehicleId, self.parking.parkingId);
+    [PFCloud callFunctionInBackground:@"makeReservation"
+                       withParameters:@{@"userId": [PFUser currentUser].objectId,
+                                        @"carId": self.selectedCar.vehicleId,
+                                        @"parkingId": self.parking.parkingId}
+                                block:^(PFObject *reservationResult, NSError *error) {
+                                    if (!error) {
+                                        Reservation *reservation = [Reservation new];
+                                        reservation.resvervationId = reservationResult.objectId;
+                                        reservation.user = reservationResult[@"user"];
+                                        reservation.parking = reservationResult[@"parking"];
+                                        reservation.vehicle = reservationResult[@"vehicle"];
+                                        reservation.bookingTime = reservationResult.createdAt;
+                                        NSLog(@"reservation Id: %@",reservation.resvervationId);
+                                        [[AccountService service] addReservation:reservation];
+                                    }
+                                }];
+
     MainViewController *mainViewController = (MainViewController *)self.navigationController.viewControllers[0];
     [mainViewController openReservationView:self];
 }
@@ -68,7 +116,15 @@
         [tView setTextAlignment:NSTextAlignmentCenter];
         tView.numberOfLines=1;
     }
-    tView.text=[self.carPickerData objectAtIndex:row];
+    Vehicle *vehicle = [self.carPickerData objectAtIndex:row];
+    NSString *vehicleLabelPicker = @"";
+    if ([vehicle.nickName isEqualToString:@""]) {
+        vehicleLabelPicker = [NSString stringWithFormat:@"%@ - %@",vehicle.licensePlate, vehicle.carMake];
+    } else {
+        vehicleLabelPicker = [NSString stringWithFormat:@"%@ - %@",vehicle.nickName, vehicle.licensePlate];
+    }
+    
+    tView.text = vehicleLabelPicker;
     
     return tView;
 }
@@ -79,14 +135,33 @@
 
     NSLog(@"car: %@",self.selectedCar);
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"openLoginViewFromReservationView"]) {
+        LoginViewController *loginViewController = (LoginViewController *)segue.destinationViewController;
+        UIButton *signInBtn = (UIButton *)[loginViewController.view viewWithTag:2];
+        [signInBtn setTitle:@"Sign In to Reserve" forState:UIControlStateNormal];
+        
+        UIButton *signInAsGuest = (UIButton *)[loginViewController.view viewWithTag:4];
+        [signInAsGuest setTitle:@"Reserve as Guest" forState:UIControlStateNormal];
+        signInAsGuest.hidden = NO;
+        
+        loginViewController.isSignInFromReservationView = YES;
+    } else if ([segue.identifier isEqualToString:@"openAddVehicleViewFromReservationView"]) {
+        AddVehicleViewController *addVehicleViewController = (AddVehicleViewController *)segue.destinationViewController;
+        addVehicleViewController.commingFromReservation = YES;
+    }
+    
 }
-*/
 
+- (IBAction)unwindFromLogin:(UIStoryboardSegue*)sender
+{
+    NSLog(@"unwindFromLogin");
+}
+- (IBAction)unwindFromAddVehicleToReservation:(UIStoryboardSegue*)sender
+{
+     NSLog(@"unwindFromReservation");
+    [self.carPicker reloadAllComponents];
+}
 @end

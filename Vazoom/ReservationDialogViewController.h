@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VZParking;
 
 @interface ReservationDialogViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
-
+-(void)setSelectedParking: (VZParking *)parking;
 @end

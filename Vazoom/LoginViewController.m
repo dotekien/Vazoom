@@ -63,7 +63,7 @@
                 [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
             } else {
                 NSLog(@"Sign in successfully");
-                if (self.isSignInFromMapView) {
+                if (self.isSignInFromReservationView) {
                     [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
                 } else if (self.isSignInFromAccountView) {
                     [self performSegueWithIdentifier:@"unwindFromLoginToAccount" sender:self];
@@ -90,7 +90,7 @@
                 [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
             } else {
                 NSLog(@"Sign in successfully");
-                if (self.isSignInFromMapView) {
+                if (self.isSignInFromReservationView) {
                     [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
                 } else if (self.isSignInFromAccountView) {
                     [self performSegueWithIdentifier:@"unwindFromLoginToAccount" sender:self];

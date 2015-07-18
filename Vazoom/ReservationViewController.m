@@ -8,12 +8,16 @@
 
 #import "ReservationViewController.h"
 #import "MainViewController.h"
+#import "AccountService.h"
+#import "Reservation.h"
+#import <Parse/PFObject.h>
 
 @interface ReservationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *qrCode;
 @property (weak, nonatomic) IBOutlet UILabel *nameLocation;
 @property (weak, nonatomic) IBOutlet UILabel *carTitlePlate;
 @property (weak, nonatomic) IBOutlet UILabel *paymentAmount;
+@property (weak, nonatomic) IBOutlet UILabel *bookTime;
 
 @end
 
@@ -21,11 +25,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.qrCode setImage:[UIImage imageNamed:@"qrCode"]];
+    Reservation *reservation = [AccountService service].reservations[0];
+    [self.qrCode setImage: reservation.qrcode];
     
-    self.nameLocation.text = @"Towson University Marriott Conference Hotel\n@ 10 Burke Ave, Towson, MD 21204";
-    self.carTitlePlate.text = @"BMW-MD1234";
-    self.paymentAmount.text = @"Visa-1208 - $12.00";
+    self.nameLocation.text = reservation.parking[@"parkingName"];
+    self.carTitlePlate.text = reservation.vehicle[@"licensePlate"];
+    self.paymentAmount.text = reservation.parking[@"parkingPrice"];
+    self.bookTime.text = [NSDateFormatter localizedStringFromDate:reservation.bookingTime
+                                                        dateStyle:NSDateFormatterMediumStyle
+                                                        timeStyle:NSDateFormatterNoStyle];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 @class PFUser;
+@class Vehicle;
+@class Reservation;
 
 typedef void(^CompletionBlock)(NSError *error);
 
 @interface AccountService : NSObject
-@property (strong, nonatomic) NSMutableArray * vehicles;
+@property (strong, nonatomic, readonly) NSMutableArray * vehicles;
+@property (strong, nonatomic, readonly) NSMutableArray * reservations;
 
 +(AccountService*)service;
 
 -(void)loginWithUserName:(NSString *)userName password:(NSString *)password completionBlock:(CompletionBlock)compBlock;
 -(void)initService;
+-(BOOL)isRegisteredVehicleListEmpty;
+-(void)addVehicle:(Vehicle *)vehicle;
+-(void)addReservation:(Reservation *)reservation;
 @end

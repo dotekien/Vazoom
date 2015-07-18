@@ -12,6 +12,7 @@
 @class ParkingSchedule;
 
 @interface VZParking : NSObject
+@property (strong, nonatomic) NSString *parkingId;
 @property (strong, nonatomic) NSString *parkingName;
 @property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) NSNumber *slotAvailability;

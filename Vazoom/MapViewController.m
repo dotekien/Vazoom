@@ -26,6 +26,7 @@
 #import <Parse/PFQuery.h>
 #import "LoginViewController.h"
 #import "AccountService.h"
+#import "ReservationDialogViewController.h"
 
 @interface MapViewController ()
 
@@ -48,7 +49,7 @@
 @property (strong, nonatomic) CLGeocoder *geoCoder;
 @property (strong, nonatomic) CLLocation *searchLocation;
 
-@property BOOL openReservationAfterSuccessLoggin;
+//@property BOOL openReservationAfterSuccessLoggin;
 @end
 
 @implementation MapViewController
@@ -63,7 +64,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.openReservationAfterSuccessLoggin = NO;
+    //self.openReservationAfterSuccessLoggin = NO;
     self.allowUpdateSearchLocation = YES;
     
     [self initRefreshControl];
@@ -153,6 +154,7 @@
 {
     for (PFObject *object in searchResults) {
         VZParking *vzParking = [VZParking new];
+        vzParking.parkingId = object.objectId;
         vzParking.parkingName = object[@"parkingName"];
         vzParking.phoneNumber = object[@"phoneNumber"];
         vzParking.location = object[@"location"];
@@ -213,10 +215,10 @@
     [super viewWillAppear:animated];
     [self showCurrentView];
     [self toggleBtnListViewAndMapView];
-    if (self.openReservationAfterSuccessLoggin) {
+    /*if (self.openReservationAfterSuccessLoggin) {
         self.openReservationAfterSuccessLoggin = NO;
         [self performSegueWithIdentifier:@"openReservationDialog" sender:self];
-    }
+    }*/
 }
 
 - (void)didReceiveMemoryWarning {
@@ -412,6 +414,7 @@
 }
 
 #pragma mark - table
+
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 89;
@@ -483,7 +486,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self openRevervationDialogView];
+    VZParking *valetParking = [self.valetParkings objectAtIndex:indexPath.row];
+    [self openRevervationDialogView: valetParking];
 }
 
 -(void)getLatestVazoomParking
@@ -556,6 +560,7 @@ float MilesToMeters(float miles) {
                                        placeName:parking.parkingName
                                      description:[self getParkingAddressTextFormat:parking.address]
                                     parkingPrice:parking.price];
+    vzAnnotation.parking = parking;
     [self.mapView addAnnotation:vzAnnotation];
 }
 
@@ -592,36 +597,19 @@ float MilesToMeters(float miles) {
 }
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    [self openRevervationDialogView];
+    VZMapAnnotation *annotation = (VZMapAnnotation *)view.annotation;
+    [self openRevervationDialogView: annotation.parking];
 }
 
--(void)openRevervationDialogView
+-(void)openRevervationDialogView:(VZParking *) vzParking
 {
-    if (![PFUser currentUser]) {
-        [self performSegueWithIdentifier:@"openLoginViewFromMapView" sender:self];
-    } else {
-        [self performSegueWithIdentifier:@"openReservationDialog" sender:self];
-    }
+    [self performSegueWithIdentifier:@"openReservationDialog" sender:vzParking];
 }
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"openLoginViewFromMapView"]) {
-         LoginViewController *loginViewController = (LoginViewController *)segue.destinationViewController;
-        UIButton *signInBtn = (UIButton *)[loginViewController.view viewWithTag:2];
-        [signInBtn setTitle:@"Sign In to Reserve" forState:UIControlStateNormal];
-        
-        UIButton *signInAsGuest = (UIButton *)[loginViewController.view viewWithTag:4];
-        [signInAsGuest setTitle:@"Reserve as Guest" forState:UIControlStateNormal];
-        signInAsGuest.hidden = NO;
-        
-        loginViewController.isSignInFromMapView = YES;
+    if ([segue.identifier isEqualToString:@"openReservationDialog"]) {
+        ReservationDialogViewController *reservationDialog = (ReservationDialogViewController *) segue.destinationViewController;
+        [reservationDialog setSelectedParking: (VZParking *)sender];
     }
-}
-
-- (IBAction)unwindFromLogin:(UIStoryboardSegue*)sender
-{
-    NSLog(@"unwindFromLogin");
-    self.openReservationAfterSuccessLoggin = YES;
 }
 @end

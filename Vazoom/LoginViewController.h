@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
-@property BOOL isSignInFromMapView;
+@property BOOL isSignInFromReservationView;
 @property BOOL isSignInFromAccountView;
 @end

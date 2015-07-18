@@ -44,10 +44,14 @@
     newVechicle.isDefault = (self.mainSelectCar.on == TRUE)?YES:NO;
     newVechicle.nickName = self.nickName.text;
     if (!self.editingVehicle) {
-        [[[AccountService service] vehicles] addObject:newVechicle];
+        [[AccountService service] addVehicle:newVechicle];
     }
-
-    [self performSegueWithIdentifier:@"unwindFromAddVehicle" sender:self];
+    
+    if (self.commingFromReservation) {
+        [self performSegueWithIdentifier:@"unwindFromAddVehicleToReservation" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"unwindFromAddVehicle" sender:self];
+    }
 }
 - (IBAction)deleteVehicle:(id)sender {
     

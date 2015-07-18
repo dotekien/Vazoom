@@ -16,4 +16,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *nickName;
 
 @property (weak, nonatomic) Vehicle *editingVehicle;
+@property BOOL commingFromReservation;
 @end

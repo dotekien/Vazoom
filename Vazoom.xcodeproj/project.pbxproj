@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5262CFB31B59E14C00F98A4E /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5262CFB21B59E14C00F98A4E /* Reservation.m */; };
 		52C6D0AC1B53371A00F69406 /* AccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C6D0AB1B53371A00F69406 /* AccountService.m */; };
 		52C6D0AF1B533E8F00F69406 /* UIViewController+Vazoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C6D0AE1B533E8F00F69406 /* UIViewController+Vazoom.m */; };
 		52D6EE3D1B51C059006AAB21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D6EE3C1B51C059006AAB21 /* main.m */; };
@@ -61,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5262CFB11B59E14C00F98A4E /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
+		5262CFB21B59E14C00F98A4E /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
 		52C6D0AA1B53371A00F69406 /* AccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountService.h; sourceTree = "<group>"; };
 		52C6D0AB1B53371A00F69406 /* AccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountService.m; sourceTree = "<group>"; };
 		52C6D0AD1B533E8F00F69406 /* UIViewController+Vazoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Vazoom.h"; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				52D6EE701B51C6BD006AAB21 /* ParkingSchedule.m */,
 				52F9BA6B1B55F31C0055E29C /* Vehicle.h */,
 				52F9BA6C1B55F31C0055E29C /* Vehicle.m */,
+				5262CFB11B59E14C00F98A4E /* Reservation.h */,
+				5262CFB21B59E14C00F98A4E /* Reservation.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -595,6 +600,7 @@
 				52D6EE3D1B51C059006AAB21 /* main.m in Sources */,
 				52D6EEC01B51C866006AAB21 /* HelpViewController.m in Sources */,
 				52C6D0AC1B53371A00F69406 /* AccountService.m in Sources */,
+				5262CFB31B59E14C00F98A4E /* Reservation.m in Sources */,
 				52D6EEB41B51C816006AAB21 /* SignUpViewController.m in Sources */,
 				52D6EE941B51C776006AAB21 /* ReservationDialogViewController.m in Sources */,
 				52D6EE811B51C73E006AAB21 /* MainNavigationController.m in Sources */,

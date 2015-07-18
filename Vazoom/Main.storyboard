@@ -479,7 +479,6 @@
                         <outlet property="menuButton" destination="tiS-a9-Ifk" id="w0m-n6-M0J"/>
                         <outlet property="searchTableView" destination="s1s-Yk-auc" id="19p-Zu-2NR"/>
                         <segue destination="SQo-hJ-QrW" kind="show" identifier="openReservationDialog" id="tmt-yh-Vl4"/>
-                        <segue destination="Vge-9n-iYI" kind="show" identifier="openLoginViewFromMapView" id="Ip1-HO-ZkX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTW-j4-edI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,6 +567,8 @@
                     <connections>
                         <outlet property="carPicker" destination="HeE-Yh-ym6" id="U33-z5-tyF"/>
                         <outlet property="parkMyCarBtn" destination="XoH-cx-9wb" id="fFG-v3-9bO"/>
+                        <segue destination="xHH-cU-QZf" kind="show" identifier="openAddVehicleViewFromReservationView" id="qge-Xq-1jI"/>
+                        <segue destination="Vge-9n-iYI" kind="show" identifier="openLoginViewFromReservationView" id="hHr-d5-aJQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVA-Eu-3da" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1182,6 +1183,7 @@
                         <outlet property="mainSelectCar" destination="dZa-H5-nrB" id="xs6-0n-RAF"/>
                         <outlet property="nickName" destination="fhe-Za-K7R" id="Rbw-Ir-UZT"/>
                         <segue destination="lw2-Gf-GmQ" kind="unwind" identifier="unwindFromAddVehicle" unwindAction="unwindFromAddVehicle:" id="8Ur-oq-eo6"/>
+                        <segue destination="lw2-Gf-GmQ" kind="unwind" identifier="unwindFromAddVehicleToReservation" unwindAction="unwindFromAddVehicleToReservation:" id="bBE-Ol-kwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0d-xN-bnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1339,8 +1341,8 @@
                         <outlet property="signInFB" destination="H7V-V5-KjU" id="CeM-Vh-K7a"/>
                         <outlet property="signUpBtn" destination="CKY-wu-HXG" id="qfv-7B-XC1"/>
                         <segue destination="Vx1-nZ-wQr" kind="show" identifier="openSignUpView" id="Yef-Aj-ZWV"/>
-                        <segue destination="H0T-CB-PdP" kind="unwind" identifier="unwindFromLogin" unwindAction="unwindFromLogin:" id="p1w-6i-jDS"/>
                         <segue destination="H0T-CB-PdP" kind="unwind" identifier="unwindFromLoginToAccount" unwindAction="unwindFromLoginToAccount:" id="mZs-sK-Oie"/>
+                        <segue destination="H0T-CB-PdP" kind="unwind" identifier="unwindFromLogin" unwindAction="unwindFromLogin:" id="YFy-jw-KdN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piH-lc-wxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1563,15 +1565,24 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsO-mW-1OS" userLabel="Book time">
+                                        <rect key="frame" x="8" y="83" width="552" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="mAf-rT-Tuw" firstAttribute="leading" secondItem="Uk7-XW-E4t" secondAttribute="leading" constant="8" id="1iV-GT-oRs"/>
+                                    <constraint firstItem="wsO-mW-1OS" firstAttribute="top" secondItem="mAf-rT-Tuw" secondAttribute="bottom" constant="8" id="4KL-W8-Ee4"/>
                                     <constraint firstAttribute="trailing" secondItem="ivj-gx-Q9d" secondAttribute="trailing" constant="8" id="5pk-WN-VMb"/>
                                     <constraint firstItem="g5k-2I-2Zc" firstAttribute="top" secondItem="Uk7-XW-E4t" secondAttribute="top" constant="8" id="92E-ix-yE1"/>
                                     <constraint firstItem="ivj-gx-Q9d" firstAttribute="leading" secondItem="Uk7-XW-E4t" secondAttribute="leading" constant="8" id="Hy6-AY-Zh8"/>
                                     <constraint firstItem="g5k-2I-2Zc" firstAttribute="leading" secondItem="Uk7-XW-E4t" secondAttribute="leading" constant="8" id="a2I-zp-UZ2"/>
+                                    <constraint firstAttribute="trailing" secondItem="wsO-mW-1OS" secondAttribute="trailing" constant="8" id="byt-ac-mCn"/>
                                     <constraint firstItem="mAf-rT-Tuw" firstAttribute="top" secondItem="ivj-gx-Q9d" secondAttribute="bottom" constant="8" id="l4r-Oo-6y4"/>
+                                    <constraint firstItem="wsO-mW-1OS" firstAttribute="leading" secondItem="Uk7-XW-E4t" secondAttribute="leading" constant="8" id="nHq-pI-x7u"/>
                                     <constraint firstItem="ivj-gx-Q9d" firstAttribute="top" secondItem="g5k-2I-2Zc" secondAttribute="bottom" constant="8" id="s7f-jH-T7z"/>
                                     <constraint firstAttribute="trailing" secondItem="g5k-2I-2Zc" secondAttribute="trailing" constant="8" id="tEY-TS-pUC"/>
                                     <constraint firstAttribute="trailing" secondItem="mAf-rT-Tuw" secondAttribute="trailing" constant="8" id="vEM-Ao-RN6"/>
@@ -1606,6 +1617,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bookTime" destination="wsO-mW-1OS" id="lCe-NE-Ac7"/>
                         <outlet property="carTitlePlate" destination="ivj-gx-Q9d" id="71f-Wl-OmO"/>
                         <outlet property="nameLocation" destination="g5k-2I-2Zc" id="5Es-7h-job"/>
                         <outlet property="paymentAmount" destination="mAf-rT-Tuw" id="oQ9-8n-ngT"/>
@@ -1708,7 +1720,7 @@
         <image name="menuIcon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Byq-zK-qzc"/>
-        <segue reference="1zG-Jh-3Uw"/>
+        <segue reference="qge-Xq-1jI"/>
+        <segue reference="hHr-d5-aJQ"/>
     </inferredMetricsTieBreakers>
 </document>

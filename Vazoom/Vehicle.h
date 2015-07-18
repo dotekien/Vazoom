@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class PFUser;
 
 @interface Vehicle : NSObject
+@property (strong, nonatomic) NSString *vehicleId;
+@property (strong, nonatomic) PFUser *user;
 @property (strong, nonatomic) NSString *licensePlate;
 @property (strong, nonatomic) NSString *carMake;
 @property (strong, nonatomic) NSString *nickName;
 
 @property BOOL isDefault;
+
 @end
