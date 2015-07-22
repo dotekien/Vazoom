@@ -25,15 +25,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Reservation *reservation = [AccountService service].reservations[0];
-    [self.qrCode setImage: reservation.qrcode];
+    if ([AccountService service].reservations.count > 0) {
+        Reservation *reservation = [AccountService service].reservations[0];
+        [self.qrCode setImage: reservation.qrcode];
+        
+        self.nameLocation.text = reservation.parking[@"parkingName"];
+        self.carTitlePlate.text = reservation.vehicle[@"licensePlate"];
+        self.paymentAmount.text = reservation.parking[@"parkingPrice"];
+        self.bookTime.text = [NSDateFormatter localizedStringFromDate:reservation.bookingTime
+                                                            dateStyle:NSDateFormatterMediumStyle
+                                                            timeStyle:NSDateFormatterShortStyle];
+    }
+}
+
+- (void)viewDidLayoutSubviews
+{
+    //[super viewDidLayoutSubviews];
+    if ([AccountService service].reservations.count == 0) {
+        UIViewController *noreservation = [self.storyboard instantiateViewControllerWithIdentifier:@"NoReservation"];
+        noreservation.view.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self.view addSubview:noreservation.view];
+        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:noreservation.view attribute:NSLayoutAttributeLeading
+                                                                      relatedBy:NSLayoutRelationEqual toItem:self.view
+                                                                      attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+        [self.view addConstraint:constraint];
+        
+        constraint = [NSLayoutConstraint constraintWithItem:noreservation.view attribute:NSLayoutAttributeTrailing
+                                                  relatedBy:NSLayoutRelationEqual toItem:self.view
+                                                  attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+        [self.view addConstraint:constraint];
+        constraint =  [NSLayoutConstraint constraintWithItem:noreservation.view
+                                                   attribute:NSLayoutAttributeTop
+                                                   relatedBy:NSLayoutRelationEqual
+                                                      toItem:self.view
+                                                   attribute:NSLayoutAttributeTop
+                                                  multiplier:1
+                                                    constant:0];
+        [self.view addConstraint:constraint];
+        constraint = [NSLayoutConstraint constraintWithItem:noreservation.view attribute:NSLayoutAttributeBottom
+                                                  relatedBy:NSLayoutRelationEqual toItem:self.view
+                                                  attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+        [self.view addConstraint:constraint];
+    }
     
-    self.nameLocation.text = reservation.parking[@"parkingName"];
-    self.carTitlePlate.text = reservation.vehicle[@"licensePlate"];
-    self.paymentAmount.text = reservation.parking[@"parkingPrice"];
-    self.bookTime.text = [NSDateFormatter localizedStringFromDate:reservation.bookingTime
-                                                        dateStyle:NSDateFormatterMediumStyle
-                                                        timeStyle:NSDateFormatterNoStyle];
 }
 
 - (void)didReceiveMemoryWarning {

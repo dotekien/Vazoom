@@ -60,9 +60,14 @@
         self.password.text.length > 0) {
         [[AccountService service] loginWithUserName: self.email.text password: self.password.text completionBlock:^(NSError *error) {
             if (error) {
+                NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                NSLog(@"Error: %@", errorString);
                 [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
             } else {
                 NSLog(@"Sign in successfully");
+                if ([PFUser currentUser]) {
+                    [AccountService service].isLogIn = YES;
+                }
                 if (self.isSignInFromReservationView) {
                     [self performSegueWithIdentifier:@"unwindFromLogin" sender:self];
                 } else if (self.isSignInFromAccountView) {
@@ -87,6 +92,8 @@
     if (sourceViewController.isSuccessfulRegistration) {
         [[AccountService service] loginWithUserName:sourceViewController.userName password:sourceViewController.passwordText completionBlock:^(NSError *error) {
             if (error) {
+                NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                NSLog(@"Error: %@", errorString);
                 [UIViewController showUIAlertActionTitle:@"Login failed!" message:[error userInfo][@"error"] from:self];
             } else {
                 NSLog(@"Sign in successfully");

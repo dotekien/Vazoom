@@ -120,6 +120,7 @@
         @strongify(self)
             NSLog(@"search location: %@",self.searchLocation);
             [self focusMaptoLocation:(CLLocation *)x];
+        
             [[self queryForTable:self.searchLocation] findObjectsInBackgroundWithTarget:self selector:@selector(extractToVZParkingList:error:)];
 
     }];
@@ -144,8 +145,8 @@
             self.noVZParking = YES;
         }
     } else {
-        // Log details of the failure
-        NSLog(@"Error: %@ %@", error, [error userInfo]);
+        NSString *errorString = [[error userInfo] objectForKey:@"error"];
+        NSLog(@"Error: %@", errorString);
         self.unableToAccessSearchService = YES;
     }
 }
@@ -265,10 +266,7 @@
 }
 - (void)reloadData
 {
-    // Reload table data
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.searchTableView reloadData];
-    });
+    [self.searchTableView reloadData];
     
     // End the refreshing
     if (self.refreshControl) {
@@ -324,17 +322,14 @@
     NSString *searchString = searchController.searchBar.text;
     
     [self updateLocationSearchResult:searchString];
-    
     if (self.searchController.searchResultsController) {
-        
         LocationSearchResultTableViewController *vc = (LocationSearchResultTableViewController *)self.searchController.searchResultsController;
         
         // Update searchResults
         vc.searchResults = self.locationSearchResults;
         vc.callViewController = self;
         
-        // And reload the tableView with the new data
-        [vc.tableView reloadData]; 
+        [vc.tableView reloadData];
     }
 }
 
@@ -366,7 +361,8 @@
         }
         else
         {
-            NSLog(@"CLGeocoder error: %@", error);
+            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+            NSLog(@"Error: %@", errorString);
         }
         
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];

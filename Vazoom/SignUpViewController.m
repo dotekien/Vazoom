@@ -78,8 +78,8 @@
                 self.isSuccessfulRegistration = YES;
                 [self performSegueWithIdentifier:@"unwindFromRegistration" sender:self];
             } else {
-                NSString *errorString = [error userInfo][@"error"];
-                NSLog(@"%@",errorString);
+                NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                NSLog(@"Error: %@", errorString);
                 [UIViewController showUIAlertActionTitle:@"Registration failed!" message:errorString from:self];
             }
         }];

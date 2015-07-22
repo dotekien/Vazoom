@@ -12,6 +12,7 @@
 #import "PFUser.h"
 #import "UIViewController+Vazoom.h"
 #import "LoginViewController.h"
+#import "AccountService.h"
 
 @interface AccountViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -81,10 +82,14 @@
 
 - (IBAction)signOut:(id)sender {
     [PFUser logOut];
-    self.email.text = @"";
-    self.firstName.text = @"";
-    self.lastName.text = @"";
-    self.phone.text = @"";
+    if (![PFUser currentUser]) {
+        self.email.text = @"";
+        self.firstName.text = @"";
+        self.lastName.text = @"";
+        self.phone.text = @"";
+        [AccountService service].isLogIn = NO;
+    }
+    
 }
 
 - (IBAction)unwindFromLoginToAccount:(UIStoryboardSegue*)sender

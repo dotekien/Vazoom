@@ -17,6 +17,7 @@
 #import <Parse/PFCloud.h>
 #import "VZParking.h"
 #import "Reservation.h"
+#import <libextobjc/EXTScope.h>
 
 @interface ReservationDialogViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *parkMyCarBtn;
@@ -67,12 +68,14 @@
 - (IBAction)parkMyCar:(id)sender {
     //submit the reservation with paramas{user, car, parking, time(option)}
     NSLog(@"userId: %@ - carId: %@ - parkingId: %@", [PFUser currentUser].objectId, self.selectedCar.vehicleId, self.parking.parkingId);
+    
     [PFCloud callFunctionInBackground:@"makeReservation"
                        withParameters:@{@"userId": [PFUser currentUser].objectId,
                                         @"carId": self.selectedCar.vehicleId,
                                         @"parkingId": self.parking.parkingId}
                                 block:^(PFObject *reservationResult, NSError *error) {
                                     if (!error) {
+                                       
                                         Reservation *reservation = [Reservation new];
                                         reservation.resvervationId = reservationResult.objectId;
                                         reservation.user = reservationResult[@"user"];
@@ -80,12 +83,23 @@
                                         reservation.vehicle = reservationResult[@"vehicle"];
                                         reservation.bookingTime = reservationResult.createdAt;
                                         NSLog(@"reservation Id: %@",reservation.resvervationId);
-                                        [[AccountService service] addReservation:reservation];
+                                        dispatch_queue_t serial_q = dispatch_queue_create("serial_q_reservation", DISPATCH_QUEUE_SERIAL);
+                                         @weakify(self)
+                                        dispatch_async(serial_q, ^{
+                                            [[AccountService service] addReservation:reservation];
+                                        });
+                                        dispatch_async(serial_q, ^{
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                @strongify(self)
+                                                MainViewController *mainViewController = (MainViewController *)self.navigationController.viewControllers[0];
+                                                [mainViewController openReservationView:self];
+                                            });
+                                        });
+                                    } else {
+                                        NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                                        NSLog(@"Error: %@", errorString);
                                     }
                                 }];
-
-    MainViewController *mainViewController = (MainViewController *)self.navigationController.viewControllers[0];
-    [mainViewController openReservationView:self];
 }
 
 #pragma mark - Picker API

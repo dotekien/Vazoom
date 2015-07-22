@@ -12,6 +12,7 @@
 #import "VehicleTableViewCell.h"
 #import "Vehicle.h"
 #import "AddVehicleViewController.h"
+#import <libextobjc/EXTScope.h>
 
 @interface VehicleViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -111,6 +112,24 @@
     Vehicle *vehicle = [[self dataSource] objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"openEditVehicleView" sender:vehicle];
     
+}
+
+-(void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        Vehicle *vehicle = [[self dataSource] objectAtIndex:indexPath.row];
+        dispatch_queue_t serial_q = dispatch_queue_create("serial_q_vehicle", DISPATCH_QUEUE_SERIAL);
+        @weakify(self)
+        dispatch_async(serial_q, ^{
+            [[AccountService service] deleleVehicle:vehicle];
+        });
+        dispatch_async(serial_q, ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                @strongify(self)
+                [self.tableView reloadData];
+            });
+        });
+    }
 }
 
 #pragma mark -

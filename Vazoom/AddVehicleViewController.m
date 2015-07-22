@@ -10,15 +10,21 @@
 #import "UIViewController+Vazoom.h"
 #import "Vehicle.h"
 #import "AccountService.h"
+#import <QuartzCore/QuartzCore.h>
+#import "PFUser.h"
 
 @interface AddVehicleViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *saveVehicleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *deletePaymentBtn;
+
 @end
 
 @implementation AddVehicleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.saveVehicleBtn.layer.cornerRadius = 10;
+    self.deletePaymentBtn.layer.cornerRadius = 10;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,15 +41,14 @@
         [UIViewController showUIAlertActionTitle:@"Vehicle Make is empty" message:@"Please enter your vehicle vehicle Make." from:self];
     }
     
-    Vehicle *newVechicle = [Vehicle new];
+    Vehicle *newVechicle = nil;
     if (self.editingVehicle) {
         newVechicle = self.editingVehicle;
-    }
-    newVechicle.licensePlate = self.licensePlate.text;
-    newVechicle.carMake = self.carMake.text;
-    newVechicle.isDefault = (self.mainSelectCar.on == TRUE)?YES:NO;
-    newVechicle.nickName = self.nickName.text;
-    if (!self.editingVehicle) {
+        [newVechicle initWith:self.editingVehicle.vehicleId user:[PFUser currentUser] license:self.licensePlate.text carMake:self.carMake.text nickName:self.nickName.text isDefault:(self.mainSelectCar.on == TRUE)?YES:NO];
+        [[AccountService service] saveVehicle:self.editingVehicle];
+    } else {
+        newVechicle = [Vehicle new];
+        [newVechicle initWith:nil user:[PFUser currentUser] license:self.licensePlate.text carMake:self.carMake.text nickName:self.nickName.text isDefault:(self.mainSelectCar.on == TRUE)?YES:NO];
         [[AccountService service] addVehicle:newVechicle];
     }
     
@@ -52,11 +57,6 @@
     } else {
         [self performSegueWithIdentifier:@"unwindFromAddVehicle" sender:self];
     }
-}
-- (IBAction)deleteVehicle:(id)sender {
-    
-    [[AccountService service].vehicles removeObject:self.editingVehicle];
-    [self performSegueWithIdentifier:@"unwindFromAddVehicle" sender:self];
 }
 
 /*

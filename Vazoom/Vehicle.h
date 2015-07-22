@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSString *licensePlate;
 @property (strong, nonatomic) NSString *carMake;
 @property (strong, nonatomic) NSString *nickName;
-
 @property BOOL isDefault;
 
+-(void)initWith:(NSString *)vehicleId user:(PFUser *)user license:(NSString *)licensePlate carMake:(NSString *)carMake nickName:(NSString *)nickName isDefault:(BOOL) isDefault;
 @end
